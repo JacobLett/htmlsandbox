@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+
+  
+  <title></title>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+
+
+    
+<div id="form">
+<!--[if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+var values;
+hbspt.forms.create({
+	portalId: "47251",
+	formId: "581ad021-a11c-4cf2-8a86-160d1e6bb525",
+      onFormSubmit: function($form) {
+        // YOUR SCRIPT HERE
+        values = $(".hs-input").map(function(){return $(this).val();}).get();
+        console.log(values);
+        
+        Cookies.set('myCookie', values, { expires: 365 });
+        
+
+
+
+
+
+        } 
+
+        
+});   
+
+//console.log(values);
+
+</script>
+</div>
+
+<div id="output"></div>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js'></script>
+
+  
+
+    <script >
+      // https://github.com/js-cookie/js-cookie 
+
+$(document).ready(function () {
+
+
+var output = Cookies.get('myCookie');
+
+ $("#output").html(output);
+
+
+
+//$("#output").html(values);
+
+    });
+    </script>
+
+
+
+  
+  
+
+</body>
+
+</html>
+ 

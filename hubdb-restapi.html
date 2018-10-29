@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+
+  
+  
+  <link rel='stylesheet' href='https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.css'>
+
+</head>
+
+<body translate="no" >
+
+  <div class="grid-four-col clearfix" id="companyLogos">
+  <script id="listCompanies" type="template">
+    <div class="col">
+      <a href="{{href}}">
+      <img src="{{src}}" class="img-fluid" alt="{{alt}}">
+        </a>
+    </div>
+  </script>
+</div>
+  
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+
+  
+
+    <script >
+ $(function() {
+ 
+ $.ajax({
+   type: "GET",
+   //dataType: 'json',
+   // Get data
+   url:
+   "https://api.hubapi.com/hubdb/api/v2/tables/850715/rows?portalId=47251",
+   // display it on page
+   success: function(data) {
+     var temp = $.trim($("#listCompanies").html());
+     
+     //#listCompanies
+     $.each(data, function(i, item) {
+
+       
+       var object = item[i].values;
+
+// console.log('item ' + i + ': ' + property + '=' + object[property] );
+console.log("value 1 name " + object[1]);
+console.log("value 2 image object " + object[2].url);
+console.log("value 3 href " + object[3]);
+
+var x = temp
+.replace(/{{src}}/gi, object[2].url)
+.replace(/{{alt}}/gi, object[1])
+.replace(/{{href}}/gi, object[3]);
+$("#companyLogos").append(x);
+
+
+
+
+       for (var i = 0; i < item.length; i++) {
+
+         
+       } // for loop  
+ 
+       
+       
+       
+       
+       
+       
+     }); //success function
+   } //
+ }); //AJAX
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+}); //JQUERY DOCUMENT LOAD
+
+    </script>
+
+
+
+  
+  
+
+  <script src="https://static.codepen.io/assets/editor/live/css_reload-2a5c7ad0fe826f66e054c6020c99c1e1c63210256b6ba07eb41d7a4cb0d0adab.js"></script>
+</body>
+
+</html>
+ 
