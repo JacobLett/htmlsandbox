@@ -46,7 +46,7 @@
      // https://listjs.com/
      var options = {
         valueNames: ['button-customer', 'button-salesperson'],
-        page: 2,
+        page: 6,
         pagination: true
     };
 
