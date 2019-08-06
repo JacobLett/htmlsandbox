@@ -1,0 +1,238 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css">
+
+  <title>Document</title>
+</head>
+<body>
+
+
+
+  <div class="container">
+      <div class="col-md-3 sidebar">
+      Sidebar  
+      </div>
+      <!-- /.col-md-4 -->
+    <div class="col-md-9">
+
+      <h1>Sales Win List</h1>
+      <p>You can search by "customer name" or "salesperson"</p>
+        <div id="sales-list">
+
+            <div class="form-inline">
+              <div class="listControls form-group ">
+                <input class="search form-control" type="text" placeholder="Search" />
+                <button class="sort btn btn-primary" data-sort="name">Sort</button>
+              </div>
+            </div>
+          
+            
+        
+            <!-- LIST -->
+            <ul class="list list-inline">
+              <li>
+                  <button 
+                  type="button" 
+                  class="btn-no-style" 
+                  data-toggle="modal" 
+                  data-target="#salesModal" 
+                  data-name="name"
+                  data-title="title 1"
+                  data-customer="Apple"
+                  data-logo="https://dummyimage.com/400x300/000/fff.png"
+                  data-industry="industry"
+                  data-products="products"
+                  data-sales cycle="sales cycle"
+                  data-competition="competition"
+                  data-background="background"
+                  data-salesperson="Tony Tiger"
+                  data-jobtitle="jobtitle"
+                  data-headshot="headshot"
+                  data-email="email"
+                  data-metrics="metrics"
+                  data-economicBuyer="economicBuyer"
+                  data-decisionCriteria="decisionCriteria" 
+                  data-decisionProcess="decisionProcess"
+                  data-identifyPain="identifyPain"
+                  data-champion="champion"
+                  >
+                  <img alt="logo" class="button-logo img-responsive">
+                  <span class="button-customer"></span>
+                  <span class="button-salesperson"></span>
+                  <span class="button-metrics"></span>
+                  <span class="button-products"></span>
+                  </button>
+              </li>
+              <li>
+                  <button 
+                  type="button" 
+                  class="btn-no-style" 
+                  data-toggle="modal" 
+                  data-target="#salesModal" 
+                  data-name="name"
+                  data-title="title 2"
+                  data-customer="Sears"
+                  data-logo="https://dummyimage.com/400x300/2aa8c7/fff.png"
+                  data-industry="industry"
+                  data-products="products"
+                  data-sales cycle="sales cycle"
+                  data-competition="competition"
+                  data-background="background"
+                  data-salesperson="Max Wineburg"
+                  data-jobtitle="jobtitle"
+                  data-headshot="headshot"
+                  data-email="email"
+                  data-metrics="metrics"
+                  data-economicBuyer="economicBuyer"
+                  data-decisionCriteria="decisionCriteria" 
+                  data-decisionProcess="decisionProcess"
+                  data-identifyPain="identifyPain"
+                  data-champion="champion"
+                  >
+                  <img alt="logo" class="button-logo img-responsive">
+                  <span class="button-customer"></span>
+                  <span class="button-salesperson"></span>
+                  <span class="button-metrics"></span>
+                  <span class="button-products"></span>
+                  </button>
+              </li>
+              <li>
+                  <button 
+                  type="button" 
+                  class="btn-no-style" 
+                  data-toggle="modal" 
+                  data-target="#salesModal" 
+                  data-name="name"
+                  data-title="title 2"
+                  data-customer="Amazon"
+                  data-logo="https://dummyimage.com/400x300/a1s1s1/fff.png"
+                  data-industry="industry"
+                  data-products="products"
+                  data-sales cycle="sales cycle"
+                  data-competition="competition"
+                  data-background="background"
+                  data-salesperson="Milton Bradley"
+                  data-jobtitle="jobtitle"
+                  data-headshot="headshot"
+                  data-email="email"
+                  data-metrics="metrics"
+                  data-economicBuyer="economicBuyer"
+                  data-decisionCriteria="decisionCriteria" 
+                  data-decisionProcess="decisionProcess"
+                  data-identifyPain="identifyPain"
+                  data-champion="champion"
+                  >
+                  <img alt="logo" class="button-logo img-responsive">
+                  <span class="button-customer"></span>
+                  <span class="button-salesperson"></span>
+                  <span class="button-metrics"></span>
+                  <span class="button-products"></span>
+                  </button>
+              </li>
+            </ul>
+            <ul class="pagination"></ul>
+        </div>
+        <!-- /#sales-list -->
+          
+        <div class="modal fade" id="salesModal" tabindex="-1" role="dialog" aria-labelledby="salesModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+        
+              <div class="modal-body">
+                  <span type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+        
+                  <img alt="logo" class="modal-logo"> 
+                <h2 class="modal-title"></h2>
+                <p class="modal-name"></p>
+                <p class="modal-customer"></p>
+                <p class="modal-logo"></p>
+                <p class="modal-industry"></p>
+                <p class="modal-products"></p>
+                <p class="modal-sales cycle"></p>
+                <p class="modal-competition"></p>
+                <p class="modal-background"></p>
+                <p class="modal-salesperson"></p>
+                <p class="modal-jobtitle"></p>
+                <p class="modal-headshot"></p>
+                <p class="modal-email"></p>
+                <p class="modal-support"></p>
+                <p class="modal-metrics"></p>
+                <p class="modal-economicBuyer"></p>
+                <p class="modal-decisionCriteria"></p> 
+                <p class="modal-decisionProcess"></p>
+                <p class="modal-identifyPain"></p>
+                <p class="modal-champion"></p>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.modal -->
+
+
+
+
+    </div>
+    <!-- /.col-md-8 -->
+  </div>
+  <!-- /.container -->
+
+
+
+
+
+
+
+<!-- 
+title
+customer
+logo
+industry
+products
+sales cycle
+competition
+background
+salesperson
+jobtitle
+headshot
+email
+metrics
+economicBuyer
+decisionCriteria 
+decisionProcess
+identifyPain
+champion
+
+
+https://www.salesmeddic.com/meddic-definition.html
+metrics
+economicBuyer
+decisionCriteria 
+decisionProcess
+identifyPain
+champion
+ -->
+  
+
+
+
+
+  
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="scripts.js" ></script>
+
+
+</body>
+</html>
