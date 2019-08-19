@@ -1,0 +1,23 @@
+﻿/* Basic Grid */
+#vrTitle {
+    text-align: center;
+    display: none;
+}
+#vrTitle.showTitle {
+    display: block;
+}
+.columns,.col{overflow:hidden}
+.columns .col{margin-right:3%;float:left;}
+.two.columns {
+    padding:0 20%;
+}
+.two.columns .col{width:48%}
+.three.columns .col{width:31%}
+.four.columns .col{width:22.5%}
+.columns .col:last-child, .columns .col.last{margin-right:0}
+@media all and (max-width: 600px) {
+.columns .col{margin-right:0!important;float:none!important;width:100%!important}
+.two.columns {
+    padding:0;
+}
+}
