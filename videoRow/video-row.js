@@ -13,7 +13,13 @@ function loadCustomerVideos(vrTitle,wistiaID1,wistiaID2,wistiaID3,wistiaID4) {
       }
 
       // load wistia scripts
-
+      document.getElementsByTagName("head")[0].insertAdjacentHTML(
+        "beforeend",
+        "<link rel=\"stylesheet\" href=\"https://github.com/JacobLett/htmlsandbox/blob/master/videoRow/video-row.css?raw=true\" />");
+        
+        
+      scriptw = "https://fast.wistia.com/embed/medias/"+wistiaID4+".jsonp";
+      
       if (wistiaID1) {
         script1 = "https://fast.wistia.com/embed/medias/"+wistiaID1+".jsonp";
       }
@@ -33,13 +39,19 @@ function loadCustomerVideos(vrTitle,wistiaID1,wistiaID2,wistiaID3,wistiaID4) {
         numColumns = "four";
         columnClass ="is-3-tablet";
         columnLast3 = "";
-        columnLast4 = " last";
+
       }
 
       
       var httpRequest = new XMLHttpRequest()
       httpRequest.onreadystatechange = function (data) {
       // code
+        
+
+
+
+
+
         document.getElementById('videoRow').innerHTML = videoRowContent;
 
       }
@@ -56,26 +68,75 @@ function loadCustomerVideos(vrTitle,wistiaID1,wistiaID2,wistiaID3,wistiaID4) {
 
 
 
-      
-      videoRowContent = `
-      <div class="container video-row">
-          <h2 id="vrTitle" style="display:`+titleDisplay+`">`+vrTitle+`</h2>
-          <div class="`+numColumns+` columns">
-              <div class="column col is-mobile is-12-mobile `+columnClass + columnLast1+`">
-                  <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID1+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
-              </div>
-              <div class="column col is-mobile is-12-mobile `+columnClass + columnLast2+`">
-                  <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID2+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
-              </div>
-              <div class="column col is-mobile is-12-mobile `+columnClass + columnLast3+`">
-                  <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID3+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
-              </div>
-              <div class="column col is-mobile is-12-mobile `+columnClass + columnLast4+`">
+   
+
+
+      if (wistiaID3 == '' && wistiaID4 == '') {
+          
+
+   
+        videoRowContent = `
+        <div class="container video-row">
+            <h2 id="vrTitle" style="display:`+titleDisplay+`">`+vrTitle+`</h2>
+            <div class="two columns">
+                <div class="column col is-mobile is-12-mobile `+columnClass+`">
+                    <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID1+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+                </div>
+                <div class="column col is-mobile is-12-mobile `+columnClass+`">
+                    <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID2+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+                </div>
+            </div>
+        </div>
+        `;
+  
+      } else if (wistiaID3 && wistiaID4 == '') {
+  
+  
+        videoRowContent = `
+        <div class="container video-row">
+            <h2 id="vrTitle" style="display:`+titleDisplay+`">`+vrTitle+`</h2>
+            <div class="three columns">
+                <div class="column col is-mobile is-12-mobile `+columnClass+`">
+                    <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID1+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+                </div>
+                <div class="column col is-mobile is-12-mobile `+columnClass+`">
+                    <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID2+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+                </div>
+                <div class="column col is-mobile is-12-mobile `+columnClass+`">
+                    <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID3+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+                </div>
+            </div>
+        </div>
+        `;
+  
+      } else {
+  
+  
+        videoRowContent = `
+        <div class="container video-row">
+            <h2 id="vrTitle" style="display:`+titleDisplay+`">`+vrTitle+`</h2>
+            <div class="four columns">
+                <div class="column col is-mobile is-12-mobile `+columnClass+`">
+                    <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID1+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+                </div>
+                <div class="column col is-mobile is-12-mobile `+columnClass+`">
+                    <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID2+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+                </div>
+                <div class="column col is-mobile is-12-mobile `+columnClass+`">
+                    <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID3+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+                </div>
+                <div class="column col is-mobile is-12-mobile `+columnClass+`">
                   <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_`+wistiaID4+` popover=true popoverAnimateThumbnail=false videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
-              </div>
-          </div>
-      </div>
-      `;
+                </div>
+            </div>
+        </div>
+        `;
+  
+      }
+  
+  
+  
+
 
 // End Function
 }

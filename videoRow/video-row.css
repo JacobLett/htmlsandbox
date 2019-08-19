@@ -1,4 +1,7 @@
 ﻿/* Basic Grid */
+.wistia_responsive_padding {
+    border:1px solid #e2e2e2;
+}
 #vrTitle {
     text-align: center;
     display: none;
