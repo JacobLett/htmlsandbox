@@ -15,7 +15,7 @@ function loadCustomerVideos(vrTitle,wistiaID1,wistiaID2,wistiaID3,wistiaID4) {
       // load wistia scripts
       document.getElementsByTagName("head")[0].insertAdjacentHTML(
         "beforeend",
-        "<link rel=\"stylesheet\" href=\"https://github.com/JacobLett/htmlsandbox/blob/master/videoRow/video-row.css?raw=true\" />");
+        "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/JacobLett/htmlsandbox/videoRow/video-row.css\" />");
         
         
       scriptw = "https://fast.wistia.com/embed/medias/"+wistiaID4+".jsonp";
