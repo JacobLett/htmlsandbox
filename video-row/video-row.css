@@ -12,7 +12,7 @@
 .columns,.col{overflow:hidden}
 .columns .col{margin-right:3%;float:left;}
 .two.columns {
-    padding:0 20%;
+    padding:0 10%;
 }
 .two.columns .col{width:48%}
 .three.columns .col{width:31%}

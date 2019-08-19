@@ -1,6 +1,7 @@
 ﻿var videoRowContent;
 function loadCustomerVideos(vrTitle,wistiaID1,wistiaID2,wistiaID3,wistiaID4) {
-    //place your code here, the scripts are all loaded
+
+      // define the variables
       var numColumns = "two";
       var columnClass ="is-6-tablet";
       var columnLast1 = "";
@@ -12,14 +13,12 @@ function loadCustomerVideos(vrTitle,wistiaID1,wistiaID2,wistiaID3,wistiaID4) {
         titleDisplay = "block";
       }
 
-      // load wistia scripts
+      // load styles
       document.getElementsByTagName("head")[0].insertAdjacentHTML(
         "beforeend",
-        "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/JacobLett/htmlsandbox/videoRow/video-row.css\" />");
+        "<link rel=\"stylesheet\" href=\"//admin.altair.com/include-header-footer/video-row/video-row.css\" />");
         
-        
-      scriptw = "https://fast.wistia.com/embed/medias/"+wistiaID4+".jsonp";
-      
+      // Load the wistia data  
       if (wistiaID1) {
         script1 = "https://fast.wistia.com/embed/medias/"+wistiaID1+".jsonp";
       }
@@ -39,23 +38,18 @@ function loadCustomerVideos(vrTitle,wistiaID1,wistiaID2,wistiaID3,wistiaID4) {
         numColumns = "four";
         columnClass ="is-3-tablet";
         columnLast3 = "";
-
       }
 
       
       var httpRequest = new XMLHttpRequest()
       httpRequest.onreadystatechange = function (data) {
-      // code
-        
 
-
-
-
-
+        // Scripts are loaded show the video content        
         document.getElementById('videoRow').innerHTML = videoRowContent;
 
       }
-      //httpRequest.open('GET', script1)
+
+      // load scripts
       httpRequest.open('GET', script1)
       httpRequest.open('GET', script2)
       if (wistiaID3) {
@@ -67,14 +61,9 @@ function loadCustomerVideos(vrTitle,wistiaID1,wistiaID2,wistiaID3,wistiaID4) {
       httpRequest.send()
 
 
-
-   
-
-
+      // set the content grid based on the number of videos
       if (wistiaID3 == '' && wistiaID4 == '') {
           
-
-   
         videoRowContent = `
         <div class="container video-row">
             <h2 id="vrTitle" style="display:`+titleDisplay+`">`+vrTitle+`</h2>
@@ -135,8 +124,6 @@ function loadCustomerVideos(vrTitle,wistiaID1,wistiaID2,wistiaID3,wistiaID4) {
       }
   
   
-  
-
 
 // End Function
 }
